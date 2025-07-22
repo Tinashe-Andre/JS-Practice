@@ -3,7 +3,7 @@ function generatePassword(length) {
   
   let password = '';
   while (password.length < length) {
-    let randomIndex = Math.ceil(Math.random() * randomChar.length);
+    let randomIndex = Math.floor(Math.random() * randomChar.length);
     password += randomChar[randomIndex];
   }
   return password;
