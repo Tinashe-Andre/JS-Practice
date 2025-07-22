@@ -1,20 +1,29 @@
-function sumOfAllNumbers(arr) {
-    return arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+function sumAll(numbers) {
+  const min = Math.min(...numbers);
+  const max = Math.max(...numbers);
+
+  let total = 0;
+  for (let i = min; i <= max; i++) {
+    total += i;
+  }
+
+  return total;
 }
 
-function averageOfNumbers(arr) {
-    if (arr.length === 0) return 0;
-    return sumOfAllNumbers(arr) / arr.length;
+function arithmeticFormula(numbers) {
+  const min = Math.min(...numbers);
+  const max = Math.max(...numbers);
+
+  const count = max - min + 1;
+  return (count * (min + max)) / 2;
 }
 
-function maxOfNumbers(arr) {
-    return arr.length === 0 ? null : Math.max(...arr);
-}
+console.log(sumAll([1, 4]));
+console.log(sumAll([4, 1]));
+console.log(sumAll([5, 10]));
+console.log(sumAll([10, 5]));
 
-function minOfNumbers(arr) {
-    return arr.length === 0 ? null : Math.min(...arr);
-}
-
-function countOfNumbers(arr) {
-    return arr.length;
-}
+console.log(arithmeticFormula([1, 4]));
+console.log(arithmeticFormula([4, 1]));
+console.log(arithmeticFormula([5, 10]));
+console.log(arithmeticFormula([10, 5]));
